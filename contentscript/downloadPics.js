@@ -1,53 +1,31 @@
 $(function(){
-
+  
   // ==GET IMAGES start==
 
   let images = [];
-  let maxAttempts = 5;
-
 
   // send images to background script to download
-  function downloadFile(imgUrl, addr, index, attempt){
-    // keep track of attempts in case it fails
-    attempt = attempt || 0;
-    attempt++;
-
-    var fileExt = imgUrl.split('.').pop();
-    var filename = addr + '/' + index + fileExt;
-
+  function sendDownload(imgURLs, addr){
     chrome.runtime.sendMessage({
       action: 'download',
-      url: imgUrl,
-      filename: filename
-    }, function(response){
-      if(chrome.runtime.lastError && attempt < maxAttempts) {
-        debugger;
-        console.log(chrome.runtime.lastError);
-        console.log('Attempting to download file again: ' + imgUrl);
-        downloadFile(imgUrl, addr, index, attempt);
-      }
-    });
-  };
-
-  function downloadFiles(imgUrls, addr, attempt) {
-    imgUrls.forEach(function(imgUrl, index){
-      downloadFile(imgUrl, addr, index);
+      urls: imgURLs,
+      addr: addr
     });
   };
 
   // get all src's
   function getPicsSrc(addr, galleryPicTag, attr){
-    $(galleryPicTag).each(function() {
+    $(galleryPicTag).each(function() { 
       images.push($(this).attr(attr));
     });
-    downloadFiles(images, $.trim(addr));
+    sendDownload(images, $.trim(addr));
   };
 
   // ==GET IMAGES end==
 
 
 
-  // download pics from ohiohousefinder
+  // download pics from ohiohousefinder 
   $('.download-ohoihousefinder').on('click', function(){
     let addr = $('.prop-address h1 a').text();
     $('.view_gallery button').click();
@@ -69,6 +47,6 @@ $(function(){
     setTimeout(function(){
       $('.cloned').remove();
       getPicsSrc(addr, galleryPicTag, attr);
-    }, 2000)
+    }, 5000)
   });
 })

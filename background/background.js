@@ -1,7 +1,7 @@
 function downloadImgs(url, path, i){
   chrome.downloads.download({
     url: url,
-    filename: `${path}/${i}.jpg`
+    filename: `${path}/${i}.jpg` 
   });
 }
 
@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender ,sendResponse){
       for(i = 1; i < msg.urls.length + 1; i++){
         if(msg.urls[i] == ''){
           console.log('faild');
-        } else {
+        } else {          
           downloadImgs(msg.urls[i], msg.addr, i);
         }
       }
