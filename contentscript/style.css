@@ -1,0 +1,16 @@
+.download-ohoihousefinder, .summary-ohoihousefinder, .download-realtorcom, .summary-realtorcom{
+  width: 200px;
+  height: 50px;
+  display: block;
+  float: left;
+  margin-right: 30px;
+  background-color: #b40101;
+  border: 0;
+  border-radius: 5px;
+}
+
+.download-realtorcom, .summary-realtorcom{
+  height: 40px;
+  color: #fff;
+  margin: 10px;
+}
