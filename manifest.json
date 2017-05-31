@@ -2,7 +2,7 @@
   "name": "OrangeGourdM",
   "version": "0.0.2",
   "manifest_version": 2,
-  "description": "Description",
+  "description": "A plugin to make it easier to create real estate listing ads. Copyright 2017, Orange Gourd Marketing.",
   "browser_action": {
     "default_title": "OrangeGourdM"
   },
