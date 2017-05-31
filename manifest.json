@@ -1,20 +1,15 @@
 {
   "name": "OrangeGourdM",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "Description",
-//   "icons": {
-//     "16": "icons/icon16.png",
-//     "48": "icons/icon48.png",
-//     "128": "icons/icon128.png"
-//   },
   "browser_action": {
-    // "default_icon": "icons/icon19.png",
     "default_title": "OrangeGourdM"
   },
   "permissions": [
     "http://www.ohiohousefinder.com/*/*",
     "http://www.realtor.com/*/*",
+    "http://*.housesforsalenetwork.com/*/*",
     "downloads",
     "clipboardRead",
     "clipboardWrite",
@@ -27,6 +22,7 @@
     {
       "matches": [
         "http://www.ohiohousefinder.com/*/*",
+        "http://*.housesforsalenetwork.com/*/*",
         "http://www.realtor.com/*/*"
       ],
       "css": [
@@ -36,7 +32,8 @@
         "contentscript/jquery.js",
         "contentscript/buttons.js",
         "contentscript/downloadPics.js",
-        "contentscript/summary.js"
+        "contentscript/summary.js",
+        "contentscript/run.js"
       ]
     }
   ]
