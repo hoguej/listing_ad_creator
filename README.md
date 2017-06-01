@@ -2,7 +2,9 @@
 This is a chrome plugin that makes it easier to create a listing ad.
 
 # Installation
-Please, see this page on how to install unpacked extensions. https://developer.chrome.com/extensions/getstarted#unpacked
+Click the "Clone or Download" in the top right of the page. CLick download. Unzip the file. 
+
+Then, see this page for instructions on how to install it in Chrome. https://developer.chrome.com/extensions/getstarted#unpacked
 
 # How to use
 This works on realtor.com and sites hosted by real geeks, but you'll need to customize to add your URL. This will create a "download images" button and a "create copy" button. The download images will download all the images, in order, to a folder with the address name. The create copy will create a sample ad for you.
